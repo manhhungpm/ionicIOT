@@ -1,0 +1,20 @@
+<ion-view  id="page5" title="Đăng nhập">
+    <ion-content class="has-header" padding="true" style="background: url(img/bg1.jpg) center; background-size: cover;">
+		<form name="loginForm" class="list " id="login-form1">
+            <ion-list class=" " id="login-list2">
+                <div class="app-icon"></div>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label" style="color: #fffcfd;">Email</span>
+                    <input ng-model="user.email" style="color: white;" type="email" placeholder="Email" required>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label" style="color: #fffcfd;" >Mật khẩu</span>
+                    <input ng-model="user.password" style="color: white;" type="password" placeholder="Mật khẩu" required>
+                </label>
+            </ion-list>
+            <div style="height: 40px;" class="spacer"></div>
+            <button ng-click="loginEmail(loginForm,user)" class=" button button-stable  button-block  icon-left ion-ios-email-outline "  id="signup-button3">ĐĂNG NHẬP VỚI EMAIL</button>
+    </form>
+
+	</ion-content>
+</ion-view>
