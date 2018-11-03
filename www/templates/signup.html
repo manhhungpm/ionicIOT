@@ -1,24 +1,20 @@
-<ion-view style="" class=" " id="page6" title="Đăng ký">
-    <ion-content class="has-header" padding="true" style="background: url(img/bg1.jpg) center; background-size: cover;">
+<ion-view style="" class=" " id="page6" title="AIR TRACKER">
+    <ion-content class="has-header" padding="true" style="background: url(img/background1.jpg) center; background-size: cover;">
+        <div class="app-icon"></div>
         <form name="signupForm" class="list " id="signup-form2">
             <ion-list class=" " id="signup-list3">
-
-			   <div class="app-icon"></div>
-
-              <label class="item item-input item-floating-label">
-                  <span style="color: #fffcfd;" class="input-label">Email</span>
-                  <input style="color: #ffffff;" ng-model="user.email" type="email" placeholder="Email">
-              </label>
-
-              <label class="item item-input item-floating-label">
-                  <span style="color: #fffcfd;" class="input-label">Mật khẩu</span>
-                  <input style="color: #ffffff;" ng-model="user.password" type="password" placeholder="Mật khẩu">
-              </label>
-
-
+                <label class="item item-input item-floating-label">
+                    <span style="color: #fffcfd;" class="input-label">Email</span>
+                    <input style="color: #ffffff;" ng-model="user.email" type="email" placeholder="Nhập email">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span style="color: #fffcfd;" class="input-label">Mật khẩu</span>
+                    <input style="color: #ffffff;" ng-model="user.password" type="password" placeholder="Nhập mật khẩu">
+                </label>
             </ion-list>
-            <div style="width: 279px; height: 35px;" class="spacer"></div>
-            <button ng-click="signupEmail(signupForm,user)" class=" button button-stable  button-block  icon-left ion-ios-email-outline " style="border-radius:0px 0px 0px 0px;" id="signup-button3">ĐĂNG KÝ VỚI EMAIL</button>
+            <div style="width: 279px; height: 40px;" class="spacer"></div>
+            <button ng-click="signupEmail(signupForm,user)" class=" button button-stable  button-block" style="border-radius:0px 0px 0px 0px;" id="signup-button3">
+            <i class="ion-unlocked" id="icon-left"></i>ĐĂNG KÝ</button>
         </form>
     </ion-content>
 </ion-view>

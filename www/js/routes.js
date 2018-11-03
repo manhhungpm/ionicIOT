@@ -33,13 +33,13 @@ angular.module('app.routes', [])
       }
     }
   })
-
+//*************
   .state('locationsList', {
       url: '/page9',
       templateUrl: 'templates/locations_list.html',
       controller: 'locationsCtrl'
     })
-  
+//***************
     .state('devicesList', {
       url: '/page15',
       templateUrl: 'templates/devices_list.html',
@@ -59,7 +59,7 @@ angular.module('app.routes', [])
     templateUrl: 'templates/support.html',
     controller: 'supportCtrl'
   })
-  
+//*******
   .state('device', {
       url: '/page10',
       templateUrl: 'templates/device_view.html',

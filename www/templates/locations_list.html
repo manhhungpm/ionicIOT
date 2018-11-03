@@ -1,18 +1,21 @@
-<ion-view id="page9" title="Các địa điểm">
-    <ion-content class="has-header" padding="false">
+<ion-view id="page9" title="Địa điểm">
+    <ion-content class="has-header" padding="false" style="background-image: url('../img/nen2.jpg');">
 
-        <div ng-repeat="item in locations" style=" margin-bottom: 0;" class="list condensed-space no-padding">
+        <div ng-repeat="item in locations" style=" margin-bottom: 0;" class="list condensed-space no-padding" >
 
           <div class="card dark-bg in" >
             <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse">
-              <h2>{{item.location}}</h2>
-              <p>{{item.info}}</p>
-              <p>{{item.deviceId}}</p>
+              <!-- thong tin  -->
+              <h2>{{item.info}}</h2> 
+              <!-- dia chi -->
+              <p>{{item.location}}</p>
+              <!-- <p>{{item.deviceId}}</p> -->
               <div class="button-bar bar-dark"  style="bottom: 0;position: absolute;right: 0;">
                 <button ng-click="deleteLocation(item.$id)" class="button button-large button-clear flat waves-effect waves-button waves-light icon ion-android-delete pull-right text-white"></button>
                 <button ng-click="itemManipulation(item)" class="button button-large button-clear flat waves-effect waves-button waves-light icon ion-ios-compose pull-right text-white"></button>
                 <button ng-click="view_location(item.$id)" class="button button-large button-clear flat waves-effect waves-button waves-light icon ion-ios-eye pull-right text-white"></button>
               </div>
+              <!-- Ảnh địa điểm -->
               <img ng-src="{{&apos;img/&apos;+ item.img +&apos;&apos;}}"   >
             </a>
           </div>

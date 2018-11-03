@@ -3,8 +3,10 @@
     background: rgba(0, 0, 0, 0) url("../img/app-icon.png") repeat scroll center center / cover ;
     border-radius: 0;
     height: 50px;
-    margin: 0 auto;
-    width: 50px;
+    /*margin: 0 auto;*/
+    margin-top: 40px;
+    margin-left: 140px;
+    width: 70px;
 }
 
 
@@ -45,7 +47,7 @@ p {
 .bold {
     font-weight: bold;
 }
-
+header
 .border-top {
     border-top: solid 1px #ccc;
     padding-top: 30px;
@@ -57,9 +59,10 @@ p {
 }
 /* Menu */
 
-.menu .bar.bar-header.expanded {
-    background-image: url('../img/material-graphite2.jpg');
-    background-size: 120%;
+.menu .bar.bar-header {
+    /*background-image: url('../img/material-graphite2.jpg');*/
+    background-color: #a4e7ef;
+    background-size: 200%;
     background-position: 0%;
     transition: all .5s ease-in-out;
 }
@@ -298,6 +301,72 @@ margin-top:10px;
 .ng-touched::-webkit-input-placeholder { color: red; }
 .ng-untouched::-webkit-input-placeholder { color: #cdcdcd; }
 
+/*New*/
+#login-form1{
+  margin-top: 50px;
+}
+
+#signup-form2{
+  margin-top: 50px;
+}
+
+#icon-left{
+  float: left;
+}
+
+#welcome{
+  margin-left: 95px;
+  margin-top: 28px;
+  font-size: 25px;
+  color: #ffffff;
+  font-family: monospace;
+}
+
+#user_info{
+  font-family: monospace;
+  padding-left: 35px;
+  height: 100px;
+  width: 350px;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 45px;
+  flex-wrap: wrap;
+}
+.logo{
+    display: flex;
+    align-content: flex-end
+}
+.info{
+    background-color: #1B5E20;
+  }
+
+.navbar1{
+   background-color: #7ed9f7;
+}
+
+img{
+  margin-top: 20px;
+}
+
+#menu-list-item1 {
+  font-size: 0.5cm;
+  margin-top: 90px;
+}
+
+#menu-list-item5 {
+  font-size: 0.5cm;
+  margin-top: 10px;
+}
+
+#menu-list-item6 {
+  font-size: 0.5cm;
+  margin-top: 10px;
+}
+
+#menu-list-item7 {
+  font-size: 0.5cm;
+  margin-top: 10px;
+}
 
 
 

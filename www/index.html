@@ -20,6 +20,13 @@
 
 
 <!--=========================================#1. Custom Header Part====================================-->
+
+  <!-- Bootstrap CSS and JS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
   <!-- MQTT.js-->
   
   <script src="lib/MQTT/paho-mqtt.js"></script>
@@ -44,7 +51,8 @@
   <!-- Additional Styles -->
   <link href="css/style.css" rel="stylesheet">
 
-
+  <!-- Icon -->
+  <!-- <script src="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css"></script> -->
 
   <!--Firebase Header-->
   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
@@ -125,25 +133,23 @@
         <!-- #3.  $root.extras -->
         <ion-side-menu side="left" id="side-menu21" ng-if="$root.extras">
 
-            <ion-header-bar class="expanded">
-              <img ng-src="img/dp.png" class="avatar motion spin fade">
-              <div class="menu-bottom">
-                {{user_info.email}}
-              </div>
+            <ion-header-bar class="info">
+              <img ng-src="img/account.png" class="avatar" style="margin-top: 0px">
+              <p id="welcome">Tài khoản:</p>
+              <!-- <p style="color: black">{{user_info}}</p> -->
+              <div class="menu" id="user_info">{{user_info.email}}</div>
             </ion-header-bar>
 
-            <ion-content class="stable-bg has-expanded-header">
-                <ion-list data-componentid="list1" class=" " id="menu-list1">
-                    <ion-item data-componentid="list-item1"  menu-close="" ui-sref="locationsList" id="menu-list-item1" class="item-icon-left  ">
-                        <i class="icon ion-ios-list-outline"></i>Các địa điểm</ion-item>
+            <ion-content class="stable-bg has-expanded-header navbar1">
+                <ion-list data-componentid="list1" class="" id="menu-list1">
+                    <ion-item data-componentid="list-item1"  menu-close="" ui-sref="locationsList" id="menu-list-item1" class="item-icon-left">
+                        <i class="icon ion-ios-list-outline"></i>Địa điểm</ion-item>
                     <ion-item data-componentid="list-item5"  menu-close="" ui-sref="settings" id="menu-list-item5" class="item-icon-left  ">
                         <i class="icon ion-ios-gear-outline"></i>Cài đặt</ion-item>
                     <ion-item data-componentid="list-item6"  menu-close="" ui-sref="support" id="menu-list-item6" class="item-icon-left  ">
                         <i class="icon ion-ios-help-outline"></i>Hỗ trợ</ion-item>
-
                     <ion-item ng-click="logout()" data-componentid="list-item7" id="menu-list-item7" class="item-icon-left  ">
                         <i class="icon ion-log-out"></i>Đăng xuất</ion-item>
-
                 </ion-list>
             </ion-content>
 

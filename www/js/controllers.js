@@ -298,12 +298,19 @@ angular.module('app.controllers', [])
         title = "Add Device";
         sub_title = "Add a new device";
       }
+    
       // An elaborate, custom popup
       var connectionPopup = $ionicPopup.show({
-        template: '<input type="text"   placeholder="Device ID"  ng-model="data.device"> <br/>'+
-          '<input type="text"   placeholder="Device type" ng-model="data.type"> <br/> ' +
-          '<input type="text"   placeholder="Info" ng-model="data.info"> <br/> ' +
-          '<input type="text"   placeholder="Image (Optional)"  ng-model="data.img"> <br/> ',
+        template:
+          '<input type="text"   placeholder="Device ID"  ng-model="data.device"> <br/>'+ //Tên thiết bị
+          '<input type="text"   placeholder="Chức năng" ng-model="data.info"> <br/> ' +  //Chức năng
+          '<input type="text"   placeholder="Loại thiết bị" ng-model="data.type"> <br/> ' +
+          // '<ion-list ng-model="data.device">'+
+          // '<ion-radio  ng-value="1">AT01</ion-radio>'+
+          // '<ion-radio  ng-value="2">AT02</ion-radio>'+
+          // '<ion-radio  ng-value="3">AT03</ion-radio>'+
+          // '</ion-list>'+
+          '<input type="text"   placeholder="Ảnh (Optional)"  ng-model="data.img"> <br/> ',
         title: title,
         subTitle: sub_title,
         scope: $scope,
@@ -682,14 +689,19 @@ angular.module('app.controllers', [])
     //client.subscribe(mqttData.currentTopic); 
     console.log($scope.charts);
     if(!$scope.init_charts) {
-      if(mqttData.currentDeviceType=="AT01")  
-          $scope.initAT01Charts();
+      console.log(mqttData.currentDeviceType);
+      if(mqttData.currentDeviceType=="AT01") {
+        $scope.initAT01Charts();
+        console.log("at01");
+      }  
       else if(mqttData.currentDeviceType=="AT02")
           $scope.initAT02Charts();
       else if(mqttData.currentDeviceType=="AT03")
           $scope.initAT03Charts();
-      else  
-          $scope.initCharts();        
+      else{  
+          $scope.initCharts(); 
+          console.log("else");
+      }       
     }
     client.subscribe("test");
 
@@ -735,11 +747,11 @@ angular.module('app.controllers', [])
           $scope.addPointDust(a.dust);
         }
         if(a.humid>=0 && a.humid<=100) {
-          // $scope.addPointHumid(Number(a.humid));
+           $scope.addPointHumid(Number(a.humid));
           $scope.updatePointHumid(a.humid);
         } 
         if(a.temp>=0 && a.temp<=80) {
-          // $scope.addPointTemp(Number(a.temp));
+           $scope.addPointTemp(Number(a.temp));
           $scope.updatePointTemp(a.temp);
         }
 
@@ -753,7 +765,7 @@ angular.module('app.controllers', [])
   $scope.prepareGraphs = function(device_type) {
     console.log(device_type);
     if(device_type=="AT01"){
-      graphs.push("aqi_chart","co2_chart","dust_chart","temp1_chart","humid1_chart");
+      graphs.push("aqi_chart","co2_chart","dust_chart","temp1_chart","humid1_chart","humid_chart","temp_chart");
     } 
     else if(device_type=="AT03") {
       graphs.push("aqi_chart","co_chart","dust_chart","temp1_chart","humid1_chart");  
@@ -1373,11 +1385,13 @@ $scope.initCharts = function() {
 
   $scope.initAT01Charts = function() {
     co2_chart = Highcharts.chart(co2_options);
-    //temp_chart = Highcharts.chart(temp_options);
     temp1_chart = Highcharts.chart(temp1_options);  
     humid1_chart = Highcharts.chart(humid1_options);
     dust_chart = Highcharts.chart(dust_options);
     aqi_chart = Highcharts.chart(aqi_options);
+    // them
+    humid_chart = Highcharts.chart(humid_options);
+    temp_chart = Highcharts.chart(temp_options);
     $scope.init_charts = true;
   }
 
@@ -1389,7 +1403,6 @@ $scope.initCharts = function() {
 
   $scope.initAT03Charts = function() {
     co_chart = Highcharts.chart(co_options);
-    //temp_chart = Highcharts.chart(temp_options);
     temp1_chart = Highcharts.chart(temp1_options);  
     humid1_chart = Highcharts.chart(humid1_options);
     dust_chart = Highcharts.chart(dust_options);
@@ -1400,17 +1413,17 @@ $scope.initCharts = function() {
    
   $scope.addPointCO2 = function (point) {
     var c; 
-    if(point<900 && point>=0)
+    if(point<800 && point>=0)
       c = '#55BF3B';
-    else if(point<1200 && point>=900)
+    else if(point<2000 && point>=800)
       c = '#DDDF0D';
-    else if(point<1600 && point>=1200)
-      c = '#FF5733' ;
-    else if(point<2000 && point>=1600)
-      c = '#DF5353';
     else if(point<4000 && point>=2000)
+      c = '#FF5733' ;
+    else if(point<8000 && point>=4000)
+      c = '#DF5353';
+    else if(point<10000 && point>8000)
       c = '#99004C';
-    else if(point<10000 && point>=4000)
+    else if(point>=10000 )
       c = '#7E0023';
     co2_chart.series[0].addPoint(
       {

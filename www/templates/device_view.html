@@ -1,19 +1,19 @@
 <ion-view   id="page10"  title= "{{devicetitle}}">
-    <ion-content class="has-header" padding="true"  >
+    <ion-content class="has-header" padding="true" style="background-image: url('../img/nen2.jpg');">
         <div ng-repeat="object in charts">
-                <div id = "{{object}}" style="min-width: 310px; 
-                                             height: 400px; 
-                                        margin: 0 auto">
-                </div>
+                <div id = "{{object}}" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
         <div class="list">
             <div class="button-bar" style="bottom: 0; position: absolute; right: 0; top: 10px">
                 <button ng-click="settingDevice(deviceId)" 
-                        class="button button-large button-clear flat waves-effect waves-button waves-light icon ion-settings pull-right text-white">
+                        class="button button-large button-clear flat waves-effect waves-button waves-light icon ion-gear-b 
+                        pull-right text">
                 </button>
                 <button ng-click="resetDevice(deviceId)" 
-                        class="button button-large button-clear flat waves-effect waves-button waves-light icon ios-power pull-right text-white">
+                        class="button button-large button-clear flat waves-effect waves-button waves-light icon ion-refresh
+                        pull-right text">
                 </button>
+        </div>
         </div>
     </ion-content>
 </ion-view>
